@@ -1,0 +1,100 @@
+<!-- Part of the HTML for the optimal team recommender page-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Team Generator</title>
+</head>
+<body>
+
+    <div class = "container">
+
+        <div class="main-content">
+            <div class = "left-box">
+                <form action ="{{url_for('team_intro')}}" method = "POST">
+                    <label for = "gw">Gameweek</label><br>
+                    <input type = "number" id = "gw" name = "gw" min = "1" max = "30" maxlength="2"><br>
+                    <label for = "budget">Team Budget</label><br>
+                    <input type = "number" id = "budget" name = "bud" min = "1" max = "110" maxlength="3"><br>
+                    <br>
+                    <input type = "submit" name = "Submit" value = "Generate Team">
+                </form>    
+                <br>
+                
+            </div>
+            <div class = "content">
+                <img class = image src = "{{ url_for('static',filename='pitch_2_enhanced.png') }}" alt = "blank">
+                <div class = "players">
+                    {% if output != "" %}
+                        <!-- Goalkeeper -->
+                        <div class = "container-row">
+                            {% for gk in output[0] %}
+                            <figure class = "image-container">
+                                <img class = image2 src = "{{ url_for('static',filename = 'player_images/' + gk[3])}}">
+                                    <figcaption class = "caption"> {{gk[0]|string}}<br>{{gk[1]|string}}<br>{{gk[2]|string}} </figcaption>
+                            </figure>
+                            {% endfor %}
+                        </div>
+                        <!-- Defenders -->
+                        <div class = "container-row">
+                            {% for def in output[1] %}
+                            <figure class = "image-container">
+                                <img class = image2 src = "{{ url_for('static',filename = 'player_images/' + def[3])}}">
+                                <figcaption class = "caption"> {{def[0]|string}}<br>{{def[1]|string}}<br>{{def[2]|string}} </figcaption>
+                            </figure>
+                            {% endfor %}
+                        </div>
+                        <!-- Midfielders -->
+                        <div class = "container-row">
+                            {% for mid in output[2] %}
+                            <figure class = "image-container">
+                                <img class = image2 src = "{{ url_for('static',filename = 'player_images/' + mid[3])}}">
+                                <figcaption class = "caption"> {{mid[0]|string}}<br>{{mid[1]|string}}<br>{{mid[2]|string}} </figcaption>
+                                {% if mid[4] == "Captain"%}
+                                    <figcaption class = "captain_caption"> Captain </figcaption>
+                                {% endif %}
+                            </figure>
+                            {% endfor %}
+                        </div>
+                        <!-- Forwards -->
+                        <div class = "container-row">
+                            {% for fwd in output[3] %}
+                            <figure class = "image-container">
+                                <img class = image2 src = "{{ url_for('static',filename = 'player_images/' + fwd[3])}}">
+                                <figcaption class = "caption"> {{fwd[0]|string}}<br>{{fwd[1]|string}}<br>{{fwd[2]|string}} </figcaption>
+                            </figure>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    
+                </div>
+                <div class = "bottom-box-2">
+                    {% if output %}
+                        Total Points : {{output[4]}} <br>
+                        Predicted Points : {{output[5]}} <br>
+                        Average GW Points : {{output[6]}} <br>
+                    {% endif %}
+                </div>
+            </div>
+            <div class = "right-box">
+                <h2>Bench</h2>
+                {% if output != "" %}
+                    <div class = "container-col">
+                        {% for player in output[7] %}
+                            <figure class = "image-container">
+                                <img class = image2 src = "{{ url_for('static',filename = 'player_images/' + player[3])}}">
+                                <figcaption class = "caption"> {{player[0]|string}}<br>{{player[1]|string}}<br>{{player[2]|string}} </figcaption>
+                            </figure>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

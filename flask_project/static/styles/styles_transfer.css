@@ -1,0 +1,182 @@
+
+/* CSS FOR THE TRANSFERS HTML PAGE*/
+
+h1{
+    text-align : center;
+    color : black
+}
+
+label{
+    font-size : 16px;
+    color : black;
+}
+
+input[type='number'],
+input[type='submit']{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    width: 200px;
+    padding :8px;
+    border-radius: 5px;
+    color: black;
+}
+
+input[type="submit"] {
+    background-color: #004d99;
+    color: white;
+    cursor: pointer;
+    border: none;
+    width: 250px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0066cc;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    height: 10vh;
+    transform: scale(0.22);
+    background-color: aliceblue;
+}
+
+.container {
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1100px;
+    position: absolute;
+    scale : 2;
+}
+
+.container .content{
+    margin-left: 780px;
+    margin-top: -650px;
+    background-color: #004d00;
+}
+
+.content img.image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    position: relative;
+  }
+
+.caption{
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px;
+    margin-top: 30px;
+    background-color: white;
+    width : 70%;
+    border-radius: 10px;
+}
+
+.container-row{
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 10px;
+    scale: 1.4;
+}
+
+.container-row-2{
+    display : flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    margin: 10px;
+    margin-right: 100px;
+    scale: 2.2;
+}
+
+
+.big-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -25px;
+    scale: 1.1;
+}
+
+.top-box{
+    scale:0.8;
+}
+
+
+.bottom-box {
+    width: 3650px;
+    height: 475px;
+    background-image: url("../pitch\ cropped\ 2.png");
+    background-repeat: repeat;
+    background-size: 100%;
+    margin-top: 5570px;
+    margin-left: -530px;
+    padding : 3px;
+    text-align: center;
+    align-self: center;
+    position: fixed;
+}
+
+.container .left-box {
+    width: 250px;
+    height: 915px;
+    background-color: lightblue;
+    margin-left: -700px; 
+    margin-top: 300px;
+    scale : 2;
+    padding: 3px;
+    border-radius: 20px;
+    text-align: center;
+    align-self: flex-start;
+}
+
+.container .right-box{
+    width: 400px;
+    height: 920px;
+    background-color: lightblue;
+    margin-left: 1850px; 
+    margin-top: 300px;
+    scale : 2;
+    padding: 3px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.players{
+    top: -145px;
+    left: 50px;
+    align-items: center;
+}
+
+.image {
+    width: 1000px;
+    scale : 2.35;
+    height: auto;
+    margin-right: 500px;
+    margin-left: 0px;
+    z-index: -1;
+    margin-top: -20px;
+}
+
+.image2{
+    z-index: 2;
+    scale : 0.45;
+    text-align: center;
+    padding: 0;
+    margin-bottom: -90px;
+}
+
+.image-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap : 1px;
+}

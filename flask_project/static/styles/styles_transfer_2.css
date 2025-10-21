@@ -1,0 +1,152 @@
+/* CSS for the transfer recommendation page*/
+
+
+body {
+    background-color: #e0f0fa;
+    font-family: Arial, sans-serif;
+  }
+  
+  .big-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .top-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 95%;
+    height: 100%;
+  }
+  
+  .left-box {
+    width: 150px;
+    height : 775px;
+    background-color: #c7e3f4;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin: 10px;
+  }
+  
+  .content {
+    flex:1;
+    background-color: #004d00;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .content img.image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+  
+  .players {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; 
+  }
+  
+  .container-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .image2 {
+    height: auto;
+    width: 50px;
+    z-index: 2;
+  }
+  
+  .caption {
+    color: black;
+    font-weight: bold;
+    background-color: white;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 5px;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .right-box {
+    width: 275px;
+    height : 775px;
+    background-color: #c7e3f4;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin: 10px;
+  }
+  
+  .bottom-box {
+    background-color: #004d00;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 60%;
+    height: 80px;
+    border-radius: 15px;
+    position: relative;
+    margin-bottom: 5px;
+    top:-140px;
+    left: -58px;
+  }
+  
+  .container-row-2 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: -10px;
+  }
+  
+  input[type="number"],
+  input[type="submit"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+  }
+  
+  input[type="submit"] {
+    background-color: #004d99;
+    color: white;
+    cursor: pointer;
+    border: none;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #0066cc;
+  }
+  

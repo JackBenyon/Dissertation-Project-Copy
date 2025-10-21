@@ -1,0 +1,125 @@
+<!-- This is the HTML code for the transfer recommendeer web app page -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static',filename='styles/styles_transfer_2.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1how ">
+    <title>Transfer Planner</title>
+</head>
+<body>
+    <div class = "big-container">
+        <div class = "top-box">
+            <div class = "container">
+                <div class = "left-box">
+                    <form action ="{{url_for('transfer')}}" method = "POST">
+                        <label for = "gw">User FPL ID</label><br>
+                        <input type = "number" id = "fpl_id" name = "FPL ID"><br>
+                        <label for = "budget">Gameweek</label><br>
+                        <input type = "number" id = "gw" name = "GW" min = "2" max = "30"><br>
+                        <input type = "submit" name = "button" value = "Import Team"><br>
+                    </form>    
+                </div>
+                <div class = "content">
+                    <img class = image src = "{{ url_for('static',filename='pitch_2_enhanced.png') }}" alt = "blank">
+                    <div class = "players">
+                        {% if output != "" %}
+                            <!-- Goalkeeper -->
+                            <div class = "container-row">
+                                {% for gk in output[0] %}
+                                    {% if gk[2] == 1 %}
+                                        <figure class = "image-container">
+                                            <img class = image2 src = "{{ url_for('static',filename = 'player_images/image_' + gk[0]|string + '.png')}}">
+                                                <figcaption class = "caption"> {{gk[1]|string}} </figcaption>
+                                        </figure>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <!-- Defenders -->
+                            <div class = "container-row">
+                                {% for def in output[1] %}
+                                    {% if def[2] == 1 %}
+                                        <figure class = "image-container">
+                                            <img class = image2 src = "{{ url_for('static',filename = 'player_images/image_' + def[0]|string + '.png')}}">
+                                                <figcaption class = "caption"> {{def[1]|string}} </figcaption>
+                                        </figure>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <!-- Midfielders -->
+                            <div class = "container-row">
+                                {% for mid in output[2] %}
+                                    {% if mid[2] == 1 %}
+                                        <figure class = "image-container">
+                                            <img class = image2 src = "{{ url_for('static',filename = 'player_images/image_' + mid[0]|string + '.png')}}">
+                                                <figcaption class = "caption"> {{mid[1]|string}} </figcaption>
+                                        </figure>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <!-- Forwards -->
+                            <div class = "container-row">
+                                {% for fwd in output[3] %}
+                                    {% if fwd[2] == 1 %}
+                                        <figure class = "image-container">
+                                            <img class = image2 src = "{{ url_for('static',filename = 'player_images/image_' + fwd[0]|string + '.png')}}">
+                                                <figcaption class = "caption"> {{fwd[1]|string}} </figcaption>
+                                        </figure>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class = "right-box">
+                    <form action ="{{url_for('transfer')}}" method = "POST">
+                        <label for = "Lookahead Period">Lookahead Period</label><br>
+                        <input type = "number" id = "lookahead" name = "Lookahead period" min = "1" max = "5"><br>
+                        <label for = "Number of free transfers">Number of free transfers</label><br>
+                        <input type = "number" id = "num_free_transfers" name = "Number of free transfers" min = "1" max = "5"><br>
+                        <input type = "submit" name = "button" value = "Generate Transfer Recommendations"><br>
+                    </form>
+                    {% if output2 != "" %}
+                        {% for i in range(output2[1] | length)  %}
+                            <b>Gameweek  
+                            {{ output2[0] + i }} : </b><br>
+                            <b>Player(s) transfered in : </b> <br>
+                            {% for j in range(output2[1][i] | length) %}
+                                {{ output2[1][i][j] }}<br>
+                            {% endfor %}
+                            <b>Player(s) transfered out : </b> <br>
+                            {% for j in range(output2[2][i] | length) %}
+                                {{ output2[2][i][j] }}<br>
+                            {% endfor %}
+                            <b>Player(s) subbed in : </b><br>
+                            {% for j in range(output2[3][i] | length) %}
+                                {{ output2[3][i][j] }}<br>
+                            {% endfor %}
+                            <b>Player(s) subbed out :  </b><br>
+                            {% for j in range(output2[4][i] | length) %}
+                                {{ output2[4][i][j] }}<br>
+                            {% endfor %}
+                            Expected Points Gain : 
+                            {{ output2[5] }}<br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class = "bottom-box">
+            {% if  output != "" %}
+                <div class = "container-row-2">
+                    {% for player in output[4] %}
+                        <figure class = "image-container">
+                            <img class = image2 src = "{{ url_for('static',filename = 'player_images/image_' + player[0]|string + '.png')}}">
+                                <figcaption class = "caption"> {{player[1]|string}} </figcaption>
+                        </figure>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
