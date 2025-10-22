@@ -4,6 +4,8 @@ All the datasets created during the project have been uploaded as part of the su
 
 The "Poject_Code_FINAL" jupyter notebook contains all the code that was used to create datasets and develop and test the machine learning models
 
+Final Report.pdf is my dissertation
+
 Some additional python files are included which show the code for getting posts from X, performing the X posts analysis methods (sentiment analysis, vector embeddings, LLM categorisation) and the code for recursive feature elimination
 
 Note that the directories of the any datasets which are read using pd.read_csv() function will need to be changed to whatever the local directory of the downloaded dataset is 
