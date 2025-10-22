@@ -1,3 +1,5 @@
+## Code for my third year dissertation project : An Evaluation of Machine Learning Techniques and Social Media Analysis to Predict an Optimal Fantasy Football Team
+
 All the datasets created during the project have been uploaded as part of the submission in the "datasets" folder. 
 
 The "Poject_Code_FINAL" jupyter notebook contains all the code that was used to create datasets and develop and test the machine learning models
