@@ -2,13 +2,7 @@ All the datasets created during the project have been uploaded as part of the su
 
 The "Poject_Code_FINAL" jupyter notebook contains all the code that was used to create datasets and develop and test the machine learning models
 
-The Fantasy-Premier-League-Copy zip is an edited clone of Vastaav's github repo
-
-The FPL-ID-Map zip is a clone of Chris Musson's github repo
-
 Some additional python files are included which show the code for getting posts from X, performing the X posts analysis methods (sentiment analysis, vector embeddings, LLM categorisation) and the code for recursive feature elimination
-
-A link to the google drive that also stores the datasets as well as some cloned github repos used during the project is : https://drive.google.com/drive/folders/1TVmTUO0J7gpwjwoHdc1WV_SVL_Ajbkhs?usp=drive_link
 
 Note that the directories of the any datasets which are read using pd.read_csv() function will need to be changed to whatever the local directory of the downloaded dataset is 
 
